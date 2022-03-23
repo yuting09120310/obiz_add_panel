@@ -12,86 +12,63 @@ namespace obiz_add_panel
 {
     public partial class Form1 : Form
     {
-        public int i = 0;
+        public int i = 1;
 
-        public Create[] ct = new Create[5];
         public Form1()
         {
             InitializeComponent();
         }
 
-        //按下新增後 調用create 生成控制項 並將生成出來的物件 綁定事件
+        //按下新增後 調用create 生成控制項 並將生成出來的物件 委派事件
         private void button1_Click(object sender, EventArgs e)
         {
-            ct[i] = new Create(panel2);
-            ct[i].Btn_send.Click += new EventHandler(Btn_send_Click);
-            ReName();
+            Create(panel2);
         }
 
 
         //動態生成的送出按鈕
         protected void Btn_send_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(ct[i].text.Text);
+
+            MessageBox.Show("");
         }
 
 
-        //將panel取名 便於排版
-        public void ReName()
+
+        
+
+        public void Create(Panel panel2)
         {
-            
-            foreach (Control control in panel2.Controls)
+            for(int j = 0; j < i; j++)
             {
-                if(!control.Name.Contains("Panel"))
+
+                //按下新增後 會創建新的panel以及子層物件
+                Button Btn_send = new Button()
                 {
-                    control.Name = "Panel" + i;
-                    i++;
-                }
-            }
-            TypeSetting();
-        }
+                   Name = $"btn_{j}",
+                   Text = "123"
+                };
 
-        //將panel重新排版
-        public void TypeSetting()
-        {
-            foreach (Control control in panel2.Controls)
-
-                for (int j = 1; j < panel2.Controls.Count; j++)
+                TextBox text = new TextBox()
                 {
-                    if (control.Name == $"Panel{j}")
-                    {
-                        control.Top = j * 100;
-                    }
-                }
-            }
-        }
+                   Name = $"Tb_{j}",
+                   Text = "445566",
+                   Width = 150
+                };
 
-        //按下新增後 會創建新的panel以及子層物件
-        public class Create
-        {
-            public Button Btn_send = new Button()
-            {
-                Text = "123"
-            };
+                Panel panel = new Panel()
+                {
+                   Name = $"panel_{j}",
+                   Width = 712,
+                   Height = 50,
+                   BackColor = Color.Tan,
+                };
 
-            public TextBox text = new TextBox()
-            {
-                Text = "445566",
-                Width = 150
-            };
-
-            public Panel panel = new Panel()
-            {
-                Width = 712,
-                Height = 50,
-                BackColor = Color.Tan,
-            };
-
-            public Create(Panel panel2)
-            {
                 panel2.Controls.Add(panel);
                 panel.Controls.Add(Btn_send);
                 panel.Controls.Add(text);
+
+                panel.Top = 10 + (j * 100);
 
                 Btn_send.Left = 400;
                 Btn_send.Top = 12;
@@ -99,7 +76,10 @@ namespace obiz_add_panel
                 text.Top = 12;
                 text.Left = 200;
             }
+
+            i++;
         }
 
     }
+}
 
