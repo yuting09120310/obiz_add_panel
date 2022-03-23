@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "obiz_add_panel", "obiz_add_panel.csproj", "{BDFDB4F7-D65C-44C5-B1C3-86757D2FA2BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDFDB4F7-D65C-44C5-B1C3-86757D2FA2BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDFDB4F7-D65C-44C5-B1C3-86757D2FA2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDFDB4F7-D65C-44C5-B1C3-86757D2FA2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDFDB4F7-D65C-44C5-B1C3-86757D2FA2BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9459A134-FC69-4ECE-9A8A-4E2ED28AEAB1}
+	EndGlobalSection
+EndGlobal
