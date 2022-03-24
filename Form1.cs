@@ -19,7 +19,7 @@ namespace obiz_add_panel
             InitializeComponent();
         }
 
-        //按下新增後 調用create 生成控制項 並將生成出來的物件 委派事件
+        //按下新增後 調用create 生成控制項
         private void Btn_Add_Click(object sender, EventArgs e)
         {
             Create();
@@ -54,7 +54,6 @@ namespace obiz_add_panel
         {
             for(int j = 0; j < i; j++)
             {
-                //按下新增後 會創建新的panel以及子層物件
                 Button Btn_send = new Button()
                 {
                    Name = $"btn_{j}",
