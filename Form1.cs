@@ -20,39 +20,51 @@ namespace obiz_add_panel
         }
 
         //按下新增後 調用create 生成控制項 並將生成出來的物件 委派事件
-        private void button1_Click(object sender, EventArgs e)
+        private void Btn_Add_Click(object sender, EventArgs e)
         {
-            Create(panel2);
+            Create();
         }
 
 
         //動態生成的送出按鈕
         protected void Btn_send_Click(object sender, EventArgs e)
         {
+            //將sender轉型成Button型態 抓取當前按鍵的數字
+            Button button = (Button)sender;
 
-            MessageBox.Show("");
+            string num = button.Name.Split('_')[1];
+
+            Control t = Controls.Find($"panel_{num}", true)[0];
+
+
+            //將撈回來的資料 以便用foreach去找panel內的各項控制項
+            Panel panel = (Panel)t;
+
+            foreach (Control c in panel.Controls)
+            {
+                if (c.Name.Contains("Lb_"))
+                {
+                    MessageBox.Show(c.Text);
+                }
+            }
+
         }
 
-
-
-        
-
-        public void Create(Panel panel2)
+        public void Create()
         {
             for(int j = 0; j < i; j++)
             {
-
                 //按下新增後 會創建新的panel以及子層物件
                 Button Btn_send = new Button()
                 {
                    Name = $"btn_{j}",
-                   Text = "123"
+                   Text = $"按鈕{j}"
                 };
 
-                TextBox text = new TextBox()
+                Label text = new Label()
                 {
-                   Name = $"Tb_{j}",
-                   Text = "445566",
+                   Name = $"Lb_{j}",
+                   Text = $"Lb_{j}",
                    Width = 150
                 };
 
@@ -64,7 +76,7 @@ namespace obiz_add_panel
                    BackColor = Color.Tan,
                 };
 
-                panel2.Controls.Add(panel);
+                this.Controls.Add(panel);
                 panel.Controls.Add(Btn_send);
                 panel.Controls.Add(text);
 
@@ -75,6 +87,8 @@ namespace obiz_add_panel
 
                 text.Top = 12;
                 text.Left = 200;
+
+                Btn_send.Click += Btn_send_Click;
             }
 
             i++;
