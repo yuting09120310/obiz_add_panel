@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Btn_Add = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Btn_Add
+            // btnAdd
             // 
-            this.Btn_Add.Location = new System.Drawing.Point(765, 183);
-            this.Btn_Add.Name = "Btn_Add";
-            this.Btn_Add.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Add.TabIndex = 2;
-            this.Btn_Add.Text = "新增";
-            this.Btn_Add.UseVisualStyleBackColor = true;
-            this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
+            this.btnAdd.Location = new System.Drawing.Point(765, 183);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "新增";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 525);
-            this.Controls.Add(this.Btn_Add);
+            this.Controls.Add(this.btnAdd);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -54,7 +54,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button Btn_Add;
+        private System.Windows.Forms.Button btnAdd;
     }
 }
 

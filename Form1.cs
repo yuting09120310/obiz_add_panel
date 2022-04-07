@@ -24,14 +24,14 @@ namespace obiz_add_panel
         }
 
         //按下新增後 調用create 生成控制項
-        private void Btn_Add_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             Create();
         }
 
 
         //動態生成的送出按鈕
-        protected void Btn_send_Click(object sender, EventArgs e)
+        protected void btnSend_Click(object sender, EventArgs e)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace obiz_add_panel
             {
                 for (int j = 0; j < i; j++)
                 {
-                    Button Btn_send = new Button()
+                    Button btnSend = new Button()
                     {
                         Name = $"btn_{j}",
                         Text = $"按鈕{j}"
@@ -87,18 +87,18 @@ namespace obiz_add_panel
                     };
 
                     this.Controls.Add(panel);
-                    panel.Controls.Add(Btn_send);
+                    panel.Controls.Add(btnSend);
                     panel.Controls.Add(text);
 
                     panel.Top = 10 + (j * 100);
 
-                    Btn_send.Left = 400;
-                    Btn_send.Top = 12;
+                    btnSend.Left = 400;
+                    btnSend.Top = 12;
 
                     text.Top = 12;
                     text.Left = 200;
 
-                    Btn_send.Click += Btn_send_Click;
+                    btnSend.Click += btnSend_Click;
                 }
 
                 i++;
