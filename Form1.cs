@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using obiz_load_data;
+using Alex_Component;
 
 namespace obiz_add_panel
 {
